@@ -1,4 +1,4 @@
-# My Flow
+# My Docker Flow
 
 1. Added a .dockerignore file
 
@@ -25,6 +25,14 @@ Frontend was serverd at `http://localhost:80/`
 `docker image rm [any old / unused repo/image:tag combinations]`
 `docker image prune`
 `docker container prune`
+
+# Kubernetes Pod Flow
+
+Boot up one pod, then access it via a hacky work around port forward at http://localhost:88/
+```
+cd resource-manifests && kubectl create -f sa-frontend-pod.yaml
+kubectl port-forward sa-frontend 88:80
+```
 
 # Original Instructions
 
