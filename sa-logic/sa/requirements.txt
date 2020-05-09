@@ -1,2 +1,7 @@
+# Pinning the Werkzeug dep because an unpinned Flask dependency caused an error:
+# AttributeError: 'Request' object has no attribute 'is_xhr'
+# When runing with a more recent version of Werkzeug. Thanks to
+# https://github.com/pallets/flask/issues/2549
+Werkzeug==0.16.1
 Flask==0.12.2
 textblob==0.15.0
