@@ -1,0 +1,4 @@
+node_modules
+
+# If this were running locally and docker were only building nginx, we could also ignore src/ and public/
+# But this image both builds the React app and copies to the nginx image, so we need them in the build context.
