@@ -29,9 +29,35 @@ Frontend was serverd at `http://localhost:80/`
 # Kubernetes Pod Flow
 
 Boot up one pod, then access it via a hacky work around port forward at http://localhost:88/
+
 ```
 cd resource-manifests && kubectl create -f sa-frontend-pod.yaml
 kubectl port-forward sa-frontend 88:80
+```
+
+Filter for pods with that label:
+
+```
+kubectl get pod -l app=sa-frontend
+```
+
+Manually scale the wrong way:
+
+```
+cd resource-manifests && kubectl create -f sa-frontend-pod2.yaml
+```
+
+Remove pods:
+
+```
+cd resource-manifests && kubectl create -f sa-frontend-pod2.yaml
+```
+
+Check pods:
+
+```
+kubectl get pods -n default
+kubectl get pods --show-labels
 ```
 
 # Original Instructions
