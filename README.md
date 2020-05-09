@@ -4,6 +4,20 @@ Forked from https://github.com/rinormaloku/k8s-mastery
 
 To practice docker/k8s concepts
 
+## Run with docker compose
+
+```
+docker-compose up -d
+```
+
+```
+docker-compose ps
+```
+
+```
+docker-compose down
+```
+
 ## Run Commands for Docker Containers
 
 Run the nginx/react frontend and python sentiment API:

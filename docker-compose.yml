@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  nginx-frontend:
+    image: "eqmvii/k8stutorial-nginx-frontend:1"
+    ports:
+      - "80:80"
+  java-backend:
+    image: "eqmvii/k8stutorial-java-backend:1"
+    environment:
+      -  SA_LOGIC_API_URL=http://python-api:5000
+    ports:
+      - "8080:8080"
+  python-api:
+    image: "eqmvii/k8stutorial-python-api:1"
