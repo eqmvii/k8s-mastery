@@ -49,5 +49,6 @@ h2{
 }
 
 body {
-  background-color: green !important;
+  /* white originally, green to practice deployments, blue for the full k8s version of the app */
+  background-color: blue !important;
 }

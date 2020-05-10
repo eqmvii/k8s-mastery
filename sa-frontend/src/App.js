@@ -20,7 +20,11 @@ class App extends Component {
     };
 
     analyzeSentence() {
-        fetch('http://localhost:8080/sentiment', {
+        // the below url should be 'http://localhost:8080/sentiment when local/docker
+        // or found from kubectl service list when running in kubernetes
+        // Because the frontend has to find its way into k8s and the java piece doesn't have a confiured static frontend
+        // (the react app is just opened using the command minikube service sa-frontend-lb
+        fetch('http://172.17.227.179:31139/sentiment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

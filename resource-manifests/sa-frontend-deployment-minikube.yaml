@@ -1,13 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sa-logic
+  name: sa-frontend
   labels:
-    app: sa-logic
+    app: sa-frontend
 spec:
   selector:
-     matchLabels:
-       app: sa-logic
+    matchLabels:
+      app:  sa-frontend
+
   replicas: 2
   minReadySeconds: 15
   strategy:
@@ -18,11 +19,11 @@ spec:
   template:
     metadata:
       labels:
-        app: sa-logic
+        app: sa-frontend
     spec:
       containers:
-        - image: eqmvii/k8stutorial-python-api:1
+        - image: eqmvii/k8stutorial-nginx-frontend:minikube
           imagePullPolicy: Always
-          name: sa-logic
+          name: sa-frontend
           ports:
-            - containerPort: 5000
+            - containerPort: 80
